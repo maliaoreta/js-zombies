@@ -29,6 +29,8 @@ function Player (name, health, strength, speed) {
   this.speed = speed;
   this.isAlive = true;
   this.equipped = false;
+  var itemName = '';
+  
 
   this.getPack = function () {
     return _pack;
@@ -38,69 +40,49 @@ function Player (name, health, strength, speed) {
     return _maxHealth;
   }
   
-  this.takeItem = function (item) {
-    _pack.push(item);
+  this.checkPack = function () {
+    for (var i = 0; i < this.getPack().length; i++){
+      itemName = itemName.concat(this.getPack()[i].name + ' ');
+    }
+    console.log(this.name + ' has ' + itemName);
   }
+
+  this.takeItem = function (item) {
+    if (_pack.length < 3){
+      _pack.push(item);
+      this.checkPack();
+      return true;
+    }
+    
+    else {
+      console.log('Your pack is too full to store another item!');
+      return false;
+    }
+  }
+  
+  this.discardItem = function (item) {
+    var itemsIndex = _pack.indexOf(item);
+
+    if (itemsIndex !== -1) {
+       _pack.splice(itemsIndex, 1);
+       console.log(this.name + ' discarded ' + item.name);
+      return true;
+    }
+    else {
+      console.log('Item not found in pack! Couldn\'t discard ' + item.name);
+      return false;
+    }
+  }
+
+  this.equip = function (itemToEquip) {
+
+    if (itemToEquip instanceof Weapon && this.getPack().includes(itemToEquip)){
+      this.equipped = itemToEquip;
+      this.discardItem(itemToEquip);
+    }
+  }
+
 }
-
-
-/**
- * Player Class Method => checkPack()
- * -----------------------------
- * Player checks the contents of their pack.
- *
- * Nicely format and print the items in the player's pack.
- * To access the pack, be sure to use Player's getPack method.
- * You should be able to invoke this function on a Player instance.
- *
- * @name checkPack
- */
-
-
-/**
- * Player Class Method => takeItem(item)
- * -----------------------------
- * Player takes an item from the world and places it into their pack.
- *
- * Player's pack can only hold a maximum of 3 items, so if they try to add more
- *   than that to the pack, return false.
- * Before returning true or false, print a message containing the player's
- *   name and item's name if successful.  Otherwise, print a message saying
- *   that the pack is full so the item could not be stored.
- * Note: The player is allowed to store similar items (items with the same name).
- * You should be able to invoke this function on a Player instance.
- *
- * @name takeItem
- * @param {Item/Weapon/Food} item   The item to take.
- * @return {boolean} true/false     Whether player was able to store item in pack.
- */
-
-
-/**
- * Player Class Method => discardItem(item)
- * -----------------------------
- * Player discards an item from their pack.
- *
- * Use Array's indexOf method to check if the pack contains the item.
- * If an item is not found in the pack, indexOf returns -1.
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
- *
- * If the item is in the pack, remove it from the pack using Array's splice method.
- * Print the player and item names and a message saying the item was discarded.
- * Return true for the successful discard.
- * Note: The splice method can also be used for array element replacement.
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
- *
- * If the item is not in the pack, return a message with the item name saying
- *   nothing was discarded since the item could not be found.
- * Return false in this case.
- *
- * You should be able to invoke this function on a Player instance.
- *
- * @name discardItem
- * @param {Item/Weapon/Food} item   The item to discard.
- * @return {boolean} true/false     Whether player was able to remove item from pack.
- */
 
 
 /**
