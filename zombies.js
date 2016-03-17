@@ -89,6 +89,20 @@ function Player (name, health, strength, speed) {
     }
   }
 
+  this.eat = function (itemToEat) {
+    if (itemToEat instanceof Food && this.getPack().includes(itemToEat)) {
+      var itemToEatIndex = this.getPack().indexOf(itemToEat);
+      _pack.splice(itemToEatIndex, 1);
+        if (this.health != this.getMaxHealth()){
+          this.health += itemToEat.energy;
+          if (this.health > this.getMaxHealth()) {
+            this.health = this.getMaxHealth();
+          }
+        }
+    }
+    return;
+  }
+
 }
 
 
