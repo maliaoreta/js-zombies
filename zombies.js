@@ -27,8 +27,10 @@ function Item (name) {
  * @property {number} damage
  */
  function Weapon (name, damage) {
-  
+
  }
+
+ Weapon.prototype = Object.create(Item.prototype);
 
 
 /**
