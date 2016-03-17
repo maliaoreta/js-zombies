@@ -88,7 +88,8 @@ Food.prototype = Object.create(Item.prototype);
  * @property {method} getMaxHealth         Returns private variable `maxHealth`.
  */
 function Player (name, health, strength, speed) {
-  
+
+  this.name = name;
 }
 
 
