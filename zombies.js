@@ -26,11 +26,12 @@ function Item (name) {
  * @param {number} damage   The weapon's damage.
  * @property {number} damage
  */
- function Weapon (name, damage) {
+function Weapon (name, damage) {
+  
+  Item.call(this, name);
+}
 
- }
-
- Weapon.prototype = Object.create(Item.prototype);
+Weapon.prototype = Object.create(Item.prototype);
 
 
 /**
