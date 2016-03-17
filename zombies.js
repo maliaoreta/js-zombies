@@ -39,7 +39,7 @@ function Player (name, health, strength, speed) {
   }
   
   this.takeItem = function (item) {
-    
+    _pack.push(item);
   }
 }
 
