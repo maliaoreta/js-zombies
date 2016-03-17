@@ -87,6 +87,9 @@ Food.prototype = Object.create(Item.prototype);
  * @property {method} getPack              Returns private variable `pack`.
  * @property {method} getMaxHealth         Returns private variable `maxHealth`.
  */
+function Player (name, health, strength, speed) {
+  
+}
 
 
 /**
