@@ -125,7 +125,7 @@ function Player (name, health, strength, speed) {
   }
 }
 
-Zombie = function (health, strength, speed) {
+function Zombie (health, strength, speed) {
   var _maxHealth = health;
   this.health = health;
   this.strength = strength;
@@ -133,16 +133,18 @@ Zombie = function (health, strength, speed) {
   this.isAlive = true;
 }
 
-FastZombie = function (health, strength, speed) {
+function FastZombie (health, strength, speed) {
 
   Zombie.call(this, health, strength, speed);
 }
 
 FastZombie.prototype = Object.create(Zombie.prototype);
 
-StrongZombie = function (health, strength, speed) {
-  
+function StrongZombie (health, strength, speed) {
+
 }
+
+StrongZombie.prototype = Object.create(Zombie.prototype);
 
 /**
  * Class => StrongZombie(health, strength, speed)
