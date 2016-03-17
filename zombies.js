@@ -97,6 +97,10 @@ function Player (name, health, strength, speed) {
   this.speed = speed;
   this.isAlive = true;
   this.equipped = false;
+
+  this.getPack = function () {
+    
+  }
 }
 
 
