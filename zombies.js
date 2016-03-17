@@ -117,6 +117,9 @@ function Player (name, health, strength, speed) {
     if (this.equipped != false) {
       return this.equipped.name;
     }
+    else {
+      return false;
+    }
   }
 
 }
