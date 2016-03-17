@@ -104,7 +104,9 @@ function Player (name, health, strength, speed) {
   }
 
   this.useItem = function (item) {
-    
+    if (item instanceof Weapon) {
+      this.equip(item);
+    }
   }
 
 }
