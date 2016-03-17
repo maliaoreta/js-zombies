@@ -121,25 +121,12 @@ function Player (name, health, strength, speed) {
       return false;
     }
   }
-
 }
 
+Zombie = function (health, strength, speed) {
+  
+}
 
-
-
-/**
- * Player Class Method => equippedWith()
- * -----------------------------
- * Player checks their equipment.
- *
- * Prints the player's name and equipped weapon's name.
- * If nothing is equipped, prints a message saying so.
- * Also returns the equipped weapon's name or false if nothing is equipped.
- * You should be able to invoke this function on a Player instance.
- *
- * @name equippedWith
- * @return {string/boolean}   Weapon name or false if nothing is equipped.
- */
 
 
 /**
