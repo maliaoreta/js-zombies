@@ -27,7 +27,7 @@ function Item (name) {
  * @property {number} damage
  */
 function Weapon (name, damage) {
-  
+  this.damage = damage;
   Item.call(this, name);
 }
 
