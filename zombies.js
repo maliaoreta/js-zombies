@@ -107,6 +107,9 @@ function Player (name, health, strength, speed) {
     if (item instanceof Weapon) {
       this.equip(item);
     }
+    else if (item instanceof Food) {
+      this.eat(item);
+    }
   }
 
 }
