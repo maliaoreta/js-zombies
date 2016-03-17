@@ -103,6 +103,10 @@ function Player (name, health, strength, speed) {
     return;
   }
 
+  this.useItem = function (item) {
+    
+  }
+
 }
 
 
