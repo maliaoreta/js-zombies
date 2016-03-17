@@ -154,27 +154,9 @@ function RangedZombie (health, strength, speed) {
 
 RangedZombie.prototype = Object.create(Zombie.prototype);
 
-/**
- * Class => RangedZombie(health, strength, speed)
- * -----------------------------
- * Creates a ranged zombie.
- *
- * The RangedZombie class constructor will call 
- *   the super class (Zombie) constructor
- *   while passing in the 3 Zombie constructor params
- *
- * @name RangedZombie
- * @param {number} health           The zombie's health.
- * @param {number} strength         The zombie's strength.
- * @param {number} speed            The zombie's speed.
- */
-
-
-/**
- * StrongZombie Extends Zombie Class
- * -----------------------------
- */
-
+function ExplodingZombie (health, strength, speed) {
+  
+}
 
 
 /**
