@@ -77,8 +77,15 @@ function Player (name, health, strength, speed) {
   this.equip = function (itemToEquip) {
 
     if (itemToEquip instanceof Weapon && this.getPack().includes(itemToEquip)){
-      this.equipped = itemToEquip;
-      this.discardItem(itemToEquip);
+      if (this.equipped === false){
+        this.equipped = itemToEquip;
+        this.discardItem(itemToEquip);
+      }
+      else {
+        var itemToEquipIndex = this.getPack().indexOf(itemToEquip);
+        _pack.splice(itemToEquipIndex, 1, this.equipped);
+        this.equipped = itemToEquip;
+      }
     }
   }
 
