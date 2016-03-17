@@ -155,10 +155,10 @@ function RangedZombie (health, strength, speed) {
 RangedZombie.prototype = Object.create(Zombie.prototype);
 
 function ExplodingZombie (health, strength, speed) {
-  
+
 }
 
-
+ExplodingZombie.prototype = Object.create(Zombie.prototype);
 /**
  * Class => ExplodingZombie(health, strength, speed)
  * -----------------------------
