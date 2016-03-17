@@ -133,6 +133,7 @@ Zombie = function (health, strength, speed) {
 
 FastZombie = function (health, strength, speed) {
 
+  Zombie.call(this, health, strength, speed);
 }
 
 FastZombie.prototype = Object.create(Zombie.prototype);
