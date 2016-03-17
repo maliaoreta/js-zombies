@@ -27,6 +27,7 @@ function Item (name) {
  * @property {number} damage
  */
 function Weapon (name, damage) {
+  
   this.damage = damage;
   Item.call(this, name);
 }
@@ -53,9 +54,10 @@ Weapon.prototype = Object.create(Item.prototype);
  * @param {number} energy     The energy the food provides.
  * @property {number} energy
  */
- function Food (name, energy) {
+function Food (name, energy) {
 
- }
+  Item.call(this, name);
+}
 
 /**
  * Food Extends Item Class
