@@ -124,7 +124,11 @@ function Player (name, health, strength, speed) {
 }
 
 Zombie = function (health, strength, speed) {
-  
+  var _maxHealth = health;
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+  this.isAlive = true;
 }
 
 
