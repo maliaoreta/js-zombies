@@ -114,6 +114,9 @@ function Player (name, health, strength, speed) {
 
   this.equippedWith = function () {
     
+    if (this.equipped != false) {
+      return this.equipped.name;
+    }
   }
 
 }
