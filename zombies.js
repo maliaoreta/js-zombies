@@ -99,7 +99,7 @@ function Player (name, health, strength, speed) {
   this.equipped = false;
 
   this.getPack = function () {
-    
+    return _pack;
   }
 }
 
