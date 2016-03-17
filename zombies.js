@@ -115,9 +115,11 @@ function Player (name, health, strength, speed) {
   this.equippedWith = function () {
     
     if (this.equipped != false) {
+      console.log(this.name + ' has ' + this.equipped.name + ' equipped.');
       return this.equipped.name;
     }
     else {
+      console.log('There is nothing equipped!');
       return false;
     }
   }
@@ -137,28 +139,10 @@ FastZombie = function (health, strength, speed) {
 }
 
 FastZombie.prototype = Object.create(Zombie.prototype);
-/**
- * Class => FastZombie(health, strength, speed)
- * -----------------------------
- * Creates a fast zombie.
- *
- * The FastZombie class constructor will call 
- *   the super class (Zombie) constructor
- *   while passing in the 3 Zombie constructor params
- *
- * @name FastZombie
- * @param {number} health           The zombie's health.
- * @param {number} strength         The zombie's strength.
- * @param {number} speed            The zombie's speed.
- */
 
-
-/**
- * FastZombie Extends Zombie Class
- * -----------------------------
- */
-
-
+StrongZombie = function (health, strength, speed) {
+  
+}
 
 /**
  * Class => StrongZombie(health, strength, speed)
