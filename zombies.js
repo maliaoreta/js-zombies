@@ -101,6 +101,10 @@ function Player (name, health, strength, speed) {
   this.getPack = function () {
     return _pack;
   }
+
+  this.getMaxHealth = function () {
+    return _maxHealth;
+  }
 }
 
 
