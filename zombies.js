@@ -132,9 +132,10 @@ Zombie = function (health, strength, speed) {
 }
 
 FastZombie = function (health, strength, speed) {
-  
+
 }
 
+FastZombie.prototype = Object.create(Zombie.prototype);
 /**
  * Class => FastZombie(health, strength, speed)
  * -----------------------------
